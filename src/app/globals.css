@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-display: var(--font-anton), "Anton", sans-serif;
+  --font-sans: var(--font-geist-sans), "Geist", system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), "Geist Mono", monospace;
+  --font-brush: var(--font-caveat-brush), "Caveat Brush", cursive;
+  --color-accent: #ff3b2f;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  background-color: #09090b;
+  color: #f4f4f5;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #09090b;
+  color: #f4f4f5;
+  overflow-x: hidden;
+  font-family: var(--font-sans);
+}
+
+/* Signature Build Mode: hide unbuilt elements synchronously before first paint */
+html.build-mode [data-build]:not(.is-built):not(.is-building) {
+  visibility: hidden;
+}
+
+html.build-mode [data-build].is-building {
+  visibility: visible;
+}
+
+html.build-mode [data-build].is-built {
+  visibility: visible;
+}
+
+/* Giant PORTFOLIO metallic red-to-black gradient + sweeping sheen */
+.portfolio-wordmark {
+  font-family: var(--font-display);
+  background-image:
+    linear-gradient(
+      115deg,
+      transparent 0%,
+      transparent 40%,
+      rgba(255, 255, 255, 0.55) 48%,
+      rgba(255, 190, 185, 0.85) 50%,
+      rgba(255, 255, 255, 0.45) 52%,
+      transparent 60%,
+      transparent 100%
+    ),
+    linear-gradient(
+      180deg,
+      #ff3b2f 0%,
+      #dc2626 32%,
+      #450a0a 72%,
+      #09090b 100%
+    );
+  background-size: 240% 100%, 100% 100%;
+  background-position: -140% 0, 0 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: portfolio-sheen 7s ease-in-out infinite;
+}
+
+@keyframes portfolio-sheen {
+  0% {
+    background-position: -140% 0, 0 0;
+  }
+  55%,
+  100% {
+    background-position: 160% 0, 0 0;
+  }
+}
+
+/* Headshot bottom fade into #09090b */
+.headshot-fade {
+  -webkit-mask-image: linear-gradient(to bottom, #000 60%, rgba(0, 0, 0, 0.75) 78%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 60%, rgba(0, 0, 0, 0.75) 78%, transparent 100%);
+}
+
+/* Stack Marquee: endless left-to-right, faded edges, pauses on hover */
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-ltr 38s linear infinite;
+}
+
+.marquee-mask:hover .marquee-track,
+.marquee-mask:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-ltr {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0%, 0, 0);
+  }
+}
+
+/* Robot Cursor Animations */
+@keyframes led-blink {
+  0%, 88%, 100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  92%, 96% {
+    opacity: 0.15;
+    transform: scaleY(0.2);
+  }
+}
+
+@keyframes antenna-pulse {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.25);
+  }
+}
+
+.robot-led {
+  transform-origin: center;
+  animation: led-blink 3.4s infinite;
+}
+
+.robot-antenna {
+  transform-origin: center;
+  animation: antenna-pulse 1.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-wordmark {
+    animation: none;
+    background-position: 0 0, 0 0;
+  }
+  .marquee-track {
+    animation: none;
+  }
+}
