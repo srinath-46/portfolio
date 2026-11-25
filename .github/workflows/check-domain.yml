@@ -1,0 +1,54 @@
+name: Check Domain Live Status
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  actions: write
+
+jobs:
+  check-status:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check PR & Domain Status
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "Checking PR #62896 status..."
+          PR_DATA=$(curl -s https://api.github.com/repos/is-a-dev/register/pulls/62896)
+          IS_MERGED=$(echo "$PR_DATA" | jq -r '.merged')
+
+          echo "Merged status: $IS_MERGED"
+
+          if [ "$IS_MERGED" != "true" ]; then
+            echo "PR #62896 is not merged yet. Waiting for maintainer review."
+            exit 0
+          fi
+
+          echo "PR is merged! Checking domain availability..."
+          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" -L https://lsrinath46.is-a.dev || true)
+          echo "Domain HTTP status: $HTTP_STATUS"
+
+          if [ "$HTTP_STATUS" = "200" ]; then
+            echo "Domain is live! Sending notification..."
+            
+            # 1. Create GitHub Issue (triggers an instant notification email to your registered GitHub email)
+            gh issue create \
+              --title "🎉 Your portfolio domain lsrinath46.is-a.dev is LIVE!" \
+              --body "Awesome news Srinath! PR #62896 has been merged by the is-a.dev maintainers, DNS has propagated, and your portfolio is now live at https://lsrinath46.is-a.dev!"
+
+            # 2. Send direct email alert via ntfy
+            curl -s -H "Title: Portfolio domain is live!" \
+                 -H "Email: l.srinath160706@gmail.com" \
+                 -d "Your domain lsrinath46.is-a.dev is live with HTTP 200 OK!" \
+                 https://ntfy.sh/srinath46_portfolio_notify || true
+
+            # 3. Disable this workflow now that it has succeeded
+            gh workflow disable "check-domain.yml" || true
+            echo "Completed successfully!"
+          else
+            echo "PR is merged, but DNS is still propagating (status: $HTTP_STATUS). Will re-check on next run."
+          fi
