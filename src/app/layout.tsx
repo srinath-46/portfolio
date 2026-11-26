@@ -29,9 +29,9 @@ const caveatBrush = Caveat_Brush({
 });
 
 export const metadata: Metadata = {
-  title: "Srinath L — AI/ML & Full Stack Developer",
+  title: "Srinath L — Cybersecurity & Full Stack Developer",
   description:
-    "Personal portfolio of Srinath L, AI/ML & Full Stack Developer based in Chennai, India.",
+    "Personal portfolio of Srinath L, Cybersecurity & Full Stack Developer based in Chennai, India.",
 };
 
 const BUILD_MODE_INIT_SCRIPT = `(function(){try{var p=new URLSearchParams(window.location.search);var q=p.get('agents');var s=localStorage.getItem('portfolio_agents');var r=window.matchMedia('(prefers-reduced-motion: reduce)').matches;var on=q==='on'?true:q==='off'?false:s==='on'?true:s==='off'?false:!r;if(on){document.documentElement.classList.add('build-mode');}}catch(e){}})();`;

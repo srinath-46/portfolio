@@ -6,6 +6,7 @@ import {
   Award,
   Code2,
   ExternalLink,
+  Github,
   GraduationCap,
   Linkedin,
   Mail,
@@ -52,6 +53,17 @@ export default function PortfolioView() {
                 {item.label}
               </a>
             ))}
+            <a
+              href={PROFILE.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-build="pop"
+              aria-label="GitHub Profile"
+              className="flex items-center gap-1.5 font-mono text-xs text-zinc-400 transition hover:text-white active:text-[#ff3b2f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff3b2f]"
+            >
+              <Github className="h-3.5 w-3.5 text-[#ff3b2f]" />
+              <span className="hidden sm:inline">GitHub</span>
+            </a>
           </nav>
         </div>
       </header>
@@ -271,15 +283,27 @@ export default function PortfolioView() {
                     <ExternalLink className="h-3.5 w-3.5 text-[#ff3b2f]" />
                     <span>Request Live</span>
                   </a>
-                  <button
-                    type="button"
-                    disabled
-                    title="Source code available upon request"
-                    className="inline-flex items-center gap-1.5 rounded border border-zinc-800 bg-zinc-950 px-3.5 py-2 font-mono text-xs text-zinc-500 transition hover:border-zinc-700 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff3b2f] disabled:cursor-not-allowed disabled:opacity-45"
-                  >
-                    <Code2 className="h-3.5 w-3.5" />
-                    <span>Code · Private</span>
-                  </button>
+                  {project.codeUrl ? (
+                    <a
+                      href={project.codeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 rounded border border-zinc-700 bg-zinc-900 px-3.5 py-2 font-mono text-xs text-zinc-100 transition hover:border-[#ff3b2f] hover:text-white active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff3b2f]"
+                    >
+                      <Github className="h-3.5 w-3.5 text-[#ff3b2f]" />
+                      <span>View Code</span>
+                    </a>
+                  ) : (
+                    <button
+                      type="button"
+                      disabled
+                      title="Source code available upon request"
+                      className="inline-flex items-center gap-1.5 rounded border border-zinc-800 bg-zinc-950 px-3.5 py-2 font-mono text-xs text-zinc-500 transition hover:border-zinc-700 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff3b2f] disabled:cursor-not-allowed disabled:opacity-45"
+                    >
+                      <Code2 className="h-3.5 w-3.5" />
+                      <span>Code · Private</span>
+                    </button>
+                  )}
                 </div>
               </div>
             </article>
@@ -492,7 +516,7 @@ export default function PortfolioView() {
             Let&apos;s build something measurable.
           </h2>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-zinc-400 sm:text-base">
-            Open to AI/ML and Full Stack engineering opportunities, applied research collaborations, and data-driven product builds.
+            Open to Cybersecurity, AI/ML, and Full Stack engineering opportunities, applied research collaborations, and security product builds.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -502,6 +526,17 @@ export default function PortfolioView() {
             >
               <Mail className="h-4 w-4" />
               <span>{PROFILE.email}</span>
+            </a>
+
+            <a
+              href={PROFILE.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-md border border-zinc-700 bg-zinc-900 px-5 py-3 font-mono text-xs text-zinc-100 transition hover:border-[#ff3b2f] hover:text-white active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff3b2f]"
+            >
+              <Github className="h-4 w-4 text-[#ff3b2f]" />
+              <span>{PROFILE.githubLabel}</span>
+              <ArrowUpRight className="h-3.5 w-3.5 text-zinc-400" />
             </a>
 
             <a

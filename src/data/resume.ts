@@ -32,16 +32,18 @@ export interface PrincipleItem {
 
 export const PROFILE = {
   name: "Srinath L",
-  role: "AI/ML & Full Stack Developer",
+  role: "Cybersecurity & Full Stack Developer",
   location: "Chennai, India",
   email: "l.srinath160706@gmail.com",
   linkedin: "https://www.linkedin.com/in/srinath-l-0460s",
   linkedinLabel: "linkedin.com/in/srinath-l-0460s",
+  github: "https://github.com/srinath-46",
+  githubLabel: "github.com/srinath-46",
   heroBio:
-    "Building intelligent applications with Python, Machine Learning, React, and Flask—from 3D cargo optimisation and wearable distress detection to real-time pricing systems.",
+    "Building intelligent security systems, AI/ML models, and full-stack web applications—from real-time insider threat detection and 3D cargo optimisation to wearable distress monitoring.",
   aboutParagraphs: [
-    "I am an AI/ML and Full Stack Developer with hands-on experience building intelligent, data-driven web applications using Python, Machine Learning, React, JavaScript, and Flask. My work spans predictive modelling, data preprocessing, REST API integration, and responsive interfaces.",
-    "Across internships and applied builds—including cargo space optimisation, sensor-based sensory distress detection, dynamic pricing, and loan eligibility prediction—I focus on combining AI/ML capabilities with full stack engineering to ship scalable, efficient, and user-focused applications. I speak English, Tamil, and Hindi.",
+    "I am a Cybersecurity and Full Stack Developer with hands-on experience building intelligent, data-driven applications, security telemetry pipelines, and predictive models using Python, React, Next.js, FastAPI, Flask, and Kali Linux.",
+    "Across internships and applied engineering builds—including AI-powered insider threat detection (SentinelIQ), wearable distress detection (AURA), logistics 3D cargo optimisation, and dynamic pricing systems—I combine cybersecurity principles with full-stack software engineering to ship secure, efficient, and user-centric systems. I speak English, Tamil, and Hindi.",
   ],
 };
 
@@ -65,32 +67,45 @@ export const HERO_STATS = [
 
 export const WORK_STATS = [
   {
-    value: "3",
-    label: "Interactive business dashboards deployed",
+    value: "5+",
+    label: "Full stack & security systems built",
   },
   {
     value: "5+",
-    label: "Data visualisation components shipped",
+    label: "Data visualisation dashboards shipped",
   },
   {
-    value: "4",
-    label: "AI/ML certifications completed",
+    value: "5",
+    label: "Verified credentials & certifications",
   },
 ];
 
 export const PROJECTS: ProjectItem[] = [
   {
-    id: "smartstack",
-    title: "SmartStack",
-    subtitle: "AI-Powered Cargo Space Optimisation",
-    role: "Fullstack Developer & AI/ML Model Trainer",
+    id: "sentineliq",
+    title: "SentinelIQ",
+    subtitle: "AI-Powered Insider Threat & Data Leak Detector",
+    role: "Cybersecurity & ML Developer",
     bullets: [
-      "Built an interactive smart logistics frontend with real-time 3D cargo stacking visualisation.",
-      "Enabled warehouse teams to preview load arrangements clearly before physical loading.",
-      "Trained and optimised AI/ML cargo placement models, improving average space utilisation by ~25%.",
-      "Added reusable layout-sharing and visual guidance features to reduce repeated planning and loading errors.",
+      "Architected a real-time insider threat and sensitive data leakage detection platform tailored for enterprise environments.",
+      "Integrated network and host telemetry ingestion across Zeek, Suricata, and Wazuh mapped against the MITRE ATT&CK framework.",
+      "Implemented ML anomaly detection using Isolation Forest and XGBoost to identify abnormal user behaviour and data exfiltration.",
+      "Integrated Microsoft Presidio and NLP pipelines to detect unauthorized transmission of sensitive PII and confidential records in real time.",
     ],
-    tech: ["React", "Three.js", "Python", "Scikit-learn", "Flask", "REST API"],
+    tech: [
+      "Cybersecurity",
+      "Zeek",
+      "Suricata",
+      "Wazuh",
+      "MITRE ATT&CK",
+      "Presidio",
+      "XGBoost",
+      "Isolation Forest",
+      "FastAPI",
+      "Supabase",
+      "PostgreSQL",
+    ],
+    codeUrl: "https://github.com/srinath-46",
   },
   {
     id: "aura",
@@ -111,13 +126,29 @@ export const PROJECTS: ProjectItem[] = [
       "MAX30102",
       "TMP117",
       "BLE",
+      "Supabase",
     ],
+    codeUrl: "https://github.com/srinath-46",
+  },
+  {
+    id: "smartstack",
+    title: "SmartStack",
+    subtitle: "AI-Powered Cargo Space Optimisation",
+    role: "Fullstack Developer & AI/ML Model Trainer",
+    bullets: [
+      "Built an interactive smart logistics frontend with real-time 3D cargo stacking visualisation.",
+      "Enabled warehouse teams to preview load arrangements clearly before physical loading.",
+      "Trained and optimised AI/ML cargo placement models, improving average space utilisation by ~25%.",
+      "Added reusable layout-sharing and visual guidance features to reduce repeated planning and loading errors.",
+    ],
+    tech: ["React", "Three.js", "Python", "Scikit-learn", "Flask", "REST API"],
+    codeUrl: "https://github.com/srinath-46",
   },
   {
     id: "dynamic-pricing",
     title: "Dynamic Pricing Web App",
     subtitle: "Automated Demand Forecasting & Revenue Optimisation",
-    role: "Ai/Ml Intern · Vulture Lines Tech Management Pvt Ltd",
+    role: "AI/ML Intern · Vulture Lines Tech Management Pvt Ltd",
     period: "Dec 2025 – Jan 2026",
     bullets: [
       "Built an end-to-end Dynamic Pricing web app using Flask and XGBoost.",
@@ -144,28 +175,35 @@ export const PROJECTS: ProjectItem[] = [
 ];
 
 export const STACK_ITEMS: string[] = [
+  "Cybersecurity",
+  "Zeek",
+  "Suricata",
+  "Wazuh",
+  "MITRE ATT&CK",
+  "Microsoft Presidio",
+  "Kali Linux",
   "Python",
   "Java",
   "C/C++",
   "SQL",
   "JavaScript",
+  "TypeScript",
   "HTML/CSS",
-  "Machine Learning",
-  "Model Training & Evaluation",
-  "Predictive Modelling",
-  "Data Preprocessing",
-  "Data Visualisation",
-  "pandas",
-  "Scikit-learn",
-  "XGBoost",
-  "SHAP",
-  "Flask",
+  "FastAPI",
   "React",
+  "Next.js",
+  "Flask",
   "Streamlit",
+  "Machine Learning",
+  "XGBoost",
+  "Isolation Forest",
+  "Scikit-learn",
+  "SHAP",
   "Three.js",
+  "PostgreSQL",
+  "Supabase",
   "REST API",
   "Figma",
-  "Kali Linux",
   "Jupyter",
   "Seeed XIAO nRF52840 Sense",
   "MAX30102",
@@ -178,11 +216,22 @@ export const RECORD_TIMELINE: RecordItem[] = [
     id: "vulture-lines",
     category: "Experience",
     period: "Dec 2025 – Jan 2026",
-    title: "Ai/Ml Intern",
+    title: "AI/ML Intern",
     organization: "Vulture Lines Tech Management Pvt Ltd",
     details: [
       "Built an end-to-end Dynamic Pricing web app using Flask and XGBoost, automating demand forecasting and reducing manual pricing effort by ~60%.",
       "Deployed 3 interactive business dashboards that let stakeholders explore revenue optimisation strategies in real time.",
+    ],
+  },
+  {
+    id: "digioptimized",
+    category: "Experience",
+    period: "Jul 2025 – Aug 2025",
+    title: "Software Development Intern",
+    organization: "Digioptimized",
+    details: [
+      "Contributed to frontend stability, responsive UI development, and performance across production workflows.",
+      "Engineered and maintained internal driver dashboard routes (/driver/dashboard) with real-time operational state tracking.",
     ],
   },
   {
@@ -203,20 +252,21 @@ export const RECORD_TIMELINE: RecordItem[] = [
     title: "B.E. Computer Science & Engineering",
     organization: "Agni College of Technology",
     details: [
-      "Undergraduate engineering degree focused on computer science, AI/ML model development, and full stack software systems.",
+      "Undergraduate engineering degree focused on computer science, cybersecurity, AI/ML model development, and full stack systems.",
     ],
   },
   {
     id: "certifications",
     category: "Certifications",
     period: "Verified Credentials",
-    title: "AI & Machine Learning Certifications",
-    organization: "Harvard CS50 · Kaggle · Simplelearn · Free",
+    title: "Cybersecurity, Cloud & AI/ML Certifications",
+    organization: "NPTEL · Harvard CS50 · Kaggle · Simplilearn · freeCodeCamp",
     details: [
+      "NPTEL: Cloud Computing (Elite Certification)",
       "Harvard CS50's Introduction to Artificial Intelligence with Python",
+      "Simplilearn: Machine Learning Using Python",
+      "freeCodeCamp: Machine Learning with Python",
       "Kaggle: Intro to Machine Learning",
-      "Simplelearn: Machine Learning Using Python",
-      "Free: Machine Learning with Python",
     ],
   },
   {
@@ -239,8 +289,21 @@ export const RECORD_TIMELINE: RecordItem[] = [
 
 export const SKILL_GROUPS: SkillGroup[] = [
   {
+    label: "Cybersecurity & Tools",
+    items: [
+      "Kali Linux",
+      "Zeek",
+      "Suricata",
+      "Wazuh",
+      "MITRE ATT&CK",
+      "Microsoft Presidio",
+      "Network Security",
+      "Security Telemetry",
+    ],
+  },
+  {
     label: "Languages",
-    items: ["Python", "Java", "C/C++", "SQL", "JavaScript", "HTML/CSS"],
+    items: ["Python", "Java", "C/C++", "SQL", "JavaScript", "TypeScript", "HTML/CSS"],
   },
   {
     label: "AI/ML & Data",
@@ -248,24 +311,25 @@ export const SKILL_GROUPS: SkillGroup[] = [
       "Machine Learning",
       "Model Training & Evaluation",
       "Predictive Modelling",
+      "Anomaly Detection",
       "Data Preprocessing",
-      "Data Visualisation",
       "pandas",
       "Scikit-learn",
       "XGBoost",
+      "Isolation Forest",
       "SHAP",
     ],
   },
   {
-    label: "Frameworks & Libraries",
-    items: ["Flask", "React", "Streamlit", "Three.js", "REST API"],
+    label: "Frameworks & Backend",
+    items: ["React", "Next.js", "FastAPI", "Flask", "Streamlit", "PostgreSQL", "Supabase", "Three.js", "REST API"],
   },
   {
-    label: "Tools & Platforms",
-    items: ["Figma", "Kali Linux", "Jupyter", "Seeed XIAO nRF52840 Sense", "BLE"],
+    label: "Hardware & Platforms",
+    items: ["Seeed XIAO nRF52840 Sense", "MAX30102", "TMP117", "BLE", "Figma", "Jupyter"],
   },
   {
-    label: "Soft Skills",
+    label: "Professional Attributes",
     items: ["Adaptability", "Leadership", "Inquisitiveness", "Problem Solving", "Persistence"],
   },
 ];
@@ -273,26 +337,26 @@ export const SKILL_GROUPS: SkillGroup[] = [
 export const PRINCIPLES: PrincipleItem[] = [
   {
     number: "01",
-    title: "Problem Solving First",
+    title: "Security & Problem Solving First",
     description:
-      "Start from the operational bottleneck—whether manual pricing, loan evaluation, or cargo loading—and measure every model against real effort reduced.",
+      "Start from the core operational vulnerability or bottleneck—whether insider threat vectors, manual pricing, or loan evaluation—and engineer measurable, verified solutions.",
   },
   {
     number: "02",
     title: "Inquisitiveness Across Layers",
     description:
-      "Bridge hardware sensors, ML training pipelines, and responsive frontends so intelligence reaches the people actually making decisions.",
+      "Bridge hardware sensors, telemetry collectors, ML models, and responsive frontends so insights and alerts reach decision makers in real time.",
   },
   {
     number: "03",
     title: "Persistence & Clean Code",
     description:
-      "Iterate on preprocessing, evaluation, and PEP 8-compliant architecture until results are explainable, visual, and ready to review.",
+      "Iterate on data preprocessing, feature engineering, and robust architectures until results are secure, explainable, and production-ready.",
   },
   {
     number: "04",
     title: "Adaptability & Leadership",
     description:
-      "Move fluidly between Flask APIs, React 3D views, and stakeholder dashboards to shorten decision cycles and ship as a team.",
+      "Move fluidly between security analysis, FastAPI backends, and stakeholder dashboards to eliminate friction and ship with high velocity.",
   },
 ];
